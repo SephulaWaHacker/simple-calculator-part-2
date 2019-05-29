@@ -1,7 +1,4 @@
 describe("simple calculator", function() {
-  beforeEach(() => {
-    const calculator = new Calculator();
-  })
   it("should add two numbers", () => {
     let [arr1, arr2, arr3 ] = [[],[],[]];
     arr1.push(0,0);
@@ -14,11 +11,11 @@ describe("simple calculator", function() {
 
   it("should add as many numbers as I want", () => {
     let arr = [];
-    arr.push(1,2,3,4,10);
-    expect(calculator.add(...arr)).toEqual(20);
+    arr.push(1,2,3,4);
+    expect(calculator.add(...arr)).toEqual(10);
   });
 
-  it("should multiply 2 numbers", () => {
+  it("should multiply two numbers", () => {
     let arr = [];
     arr.push(1,2);
     expect(calculator.multiply(...arr)).toEqual(2)
@@ -30,4 +27,23 @@ describe("simple calculator", function() {
     expect(calculator.multiply(...arr)).toEqual()
   });
 
+  it("should return the last result", () => {
+    expect(calculator.add(1,2)).toEqual(3);
+    expect(calculator.last()).toEqual(3)
+  }); 
+
+  it("should allow last() to be used as parameter", () => {
+    expect(calculator.add(1,2)).toEqual(3);
+    expect(calculator.multiply(calculator.last(), 5)).toEqual(15)
+  });
+
+  it("should remember more stuff", () => {
+    expect(calculator.add(1,2)).toEqual(3);
+    expect(calculator.set_slot(1)).toEqual(3);
+    expect(calculator.get_slot(1)).toEqual(3);
+    expect(calculator.add(10, 20)).toEqual(30);
+    expect(calculator.set_slot(2)).toEqual(30);
+    expect(calculator.get_slot(2)).toEqual(30);
+
+  })
 });
