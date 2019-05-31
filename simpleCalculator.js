@@ -20,13 +20,13 @@ class Calculator {
 		};
 
 		this.set_slot = function(slotNumber) {
-			this.slots.push(this.last())
+			this.slots.push(this.last());
 			return this.slots[arguments[0] - 1];
 		};
 
 		this.get_slot = function() {
-			return this.slots[arguments[0] - 1]
-		}
+			return this.slots[arguments[0] - 1];
+		};
 	}
 }
 const calculator = new Calculator();
