@@ -37,7 +37,7 @@ describe("simple calculator", function() {
     expect(calculator.multiply(calculator.last(), 5)).toEqual(15)
   });
 
-  it("should remember more stuff", () => {
+  it("should remember more stuff && ", () => {
     expect(calculator.add(1,2)).toEqual(3);
     expect(calculator.set_slot(1)).toEqual(3);
     expect(calculator.get_slot(1)).toEqual(3);
@@ -51,5 +51,8 @@ describe("simple calculator", function() {
     expect(calculator.set_slot(1)).toEqual(3);
     expect(calculator.get_slot(2)).toEqual(30);
     expect(calculator.last(2)).toEqual(300);
+    expect(calculator.add(calculator.slots[0], 5)).toEqual(8);
+    expect(calculator.multiply(calculator.slots[1], 2)).toEqual(60);
+
   })
 });
