@@ -44,6 +44,12 @@ describe("simple calculator", function() {
     expect(calculator.add(10, 20)).toEqual(30);
     expect(calculator.set_slot(2)).toEqual(30);
     expect(calculator.get_slot(2)).toEqual(30);
-
+    expect(calculator.add(100, 200)).toEqual(300);
+    expect(calculator.set_slot(1)).toEqual(3);
+    expect(calculator.get_slot(2)).toEqual(30);
+    expect(calculator.last()).toEqual(300);
+    expect(calculator.set_slot(1)).toEqual(3);
+    expect(calculator.get_slot(2)).toEqual(30);
+    expect(calculator.last(2)).toEqual(300);
   })
 });
